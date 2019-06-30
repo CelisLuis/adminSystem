@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>HOLA TE ENCUENTRAS EN GASTOS</h1>
+
+
+    <div class="card" style="width: 30rem; border-radius: 2rem;">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo Gasto</h5>
+            <div class="form-group">
+                <label>Tipo de Gasto</label>
+                <select (ngModel)="nuevo.tipo" class="form-control">
+                    <option>Gas</option>
+                    <option>Agua</option>
+                    <option>Tienda</option>
+                    <option>General</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>$ Gastado</label>
+                <input type="text" (ngModel)="nuevo.cantidad" class="form-control" placeholder="$&nbsp;cantidad">
+            </div>
+            <button type="button" (click)="guardarGasto(nuevo)" class="btn btn-outline-success">Guardar</button>
+        </div>
+    </div>
+    <hr>
+
+    <div *ngFor="let gasto of gastos" class="card" style="width: 30rem; border-radius: 2rem;">
+        <div class="card-body">
+            <h5 class="card-title">Gasto {{ gasto.fecha}}</h5>
+            <p class="card-text">{{ gasto.tipo }}</p>
+            <p class="card-text">{{ gasto.cantidad }}</p>
+        </div>
+    </div>
+
+    <!--
+        https://medium.com/@avanthikameenakshi/building-restful-api-with-nodejs-and-mysql-in-10-min-ff740043d4be
+    -->
+    
+
+</div>
