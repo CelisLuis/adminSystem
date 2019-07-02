@@ -2,12 +2,13 @@
     <h1>HOLA TE ENCUENTRAS EN GASTOS</h1>
 
 
-    <div class="card" style="width: 30rem; border-radius: 2rem;">
+    <!--
+    <div class="card" style="width: 30rem; border-radius: 2rem; margin: auto;">
         <div class="card-body">
             <h5 class="card-title">Nuevo Gasto</h5>
             <div class="form-group">
                 <label>Tipo de Gasto</label>
-                <select (ngModel)="nuevo.tipo" class="form-control">
+                <select class="form-control">
                     <option>Gas</option>
                     <option>Agua</option>
                     <option>Tienda</option>
@@ -16,24 +17,49 @@
             </div>
             <div class="form-group">
                 <label>$ Gastado</label>
-                <input type="text" (ngModel)="nuevo.cantidad" class="form-control" placeholder="$&nbsp;cantidad">
+                <input type="text" class="form-control" placeholder="$&nbsp;cantidad">
             </div>
-            <button type="button" (click)="guardarGasto(nuevo)" class="btn btn-outline-success">Guardar</button>
+            <button type="button" (click)="guardarGasto()" class="btn btn-outline-success">Guardar</button>
         </div>
-    </div>
+    </div> 
+    -->
+    <div class="card" *ngIf="esNuevaCompra" style="width: 30rem; border-radius: 2rem; margin: auto;">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo Gasto</h5>
+            <div class="form-group">
+                <label>Tipo de Gasto</label>
+                <select class="form-control">
+                    <option>Gas</option>
+                    <option>Agua</option>
+                    <option>Tienda</option>
+                    <option>General</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>$ Gastado</label>
+                <input type="text" class="form-control" placeholder="$&nbsp;cantidad">
+            </div>
+            <button type="button" (click)="guardarGasto()" class="btn btn-outline-success">Guardar</button>
+        </div>
+    </div> 
+
+    <button type="button" class="btn btn-default btn-sm btn-success" (click)="agregarCompra()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </button>
     <hr>
 
-    <div *ngFor="let gasto of gastos" class="card" style="width: 30rem; border-radius: 2rem;">
-        <div class="card-body">
-            <h5 class="card-title">Gasto {{ gasto.fecha}}</h5>
-            <p class="card-text">{{ gasto.tipo }}</p>
-            <p class="card-text">{{ gasto.cantidad }}</p>
+    <div class="row">
+        <div *ngFor="let item of [1,1,1,1,1]" class="col-sm" style="padding-bottom: 20px;">
+            <div class="card" style="width: 30rem; border-radius: 2rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> 01/05/19 </h5>
+                    <p class="card-text"> Agua </p>
+                    <p class="card-text"> $ 402.52 </p>
+                    <button type="button" class="btn btn-default btn-warning">Edit</button>
+                    <button type="button" class="btn btn-default btn-danger">Delete</button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!--
-        https://medium.com/@avanthikameenakshi/building-restful-api-with-nodejs-and-mysql-in-10-min-ff740043d4be
-    -->
     
-
 </div>

@@ -8,6 +8,8 @@ import * as moment from 'moment';
 })
 export class AdminGastosComponent implements OnInit {
 
+  esNuevaCompra: boolean = false;
+
   nuevoGasto: object = {
     fecha: '01-01-1990',
     tipo: 'agua',
@@ -21,8 +23,9 @@ export class AdminGastosComponent implements OnInit {
   ngOnInit() {
   }
 
-  guardarGasto ( ) {
-    
+  agregarCompra() {
+    this.esNuevaCompra = true;
+
   }
 
 }

@@ -9,7 +9,7 @@ import { AdminGastosComponent } from './admin/admin-gastos/admin-gastos.componen
 
 const routes: Routes = [
   { path: 'admin', component: AdminContentComponent},
-  { path: 'adminGastos', component: AdminGastosComponent }
+  { path: 'admingastos', component: AdminGastosComponent }
 ];
 
 @NgModule({
